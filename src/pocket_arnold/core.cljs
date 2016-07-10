@@ -5,6 +5,11 @@
 
 (defonce talking (r/atom false))
 
+(defn text-bubble [talking]
+  [:div.text-bubble
+    {:class (when-not @talking "hidden")}
+    "Put that cookie down! Now! You big fat baby!"])
+
 (defn arnold-face [talking]
   (let [path (if @talking
                  "img/arnold-talking.png"
@@ -19,7 +24,9 @@
        :on-click #(swap! talking not)}]))
 
 (defn app-root [talking]
-  [arnold-face talking])
+  [:div.arnold
+    [text-bubble talking]
+    [arnold-face talking]])
 
 (let [el (.getElementById js/document "app")]
   (r/render-component [app-root talking] el))
