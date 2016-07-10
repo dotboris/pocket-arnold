@@ -6,9 +6,11 @@
 (defonce talking (r/atom false))
 
 (defn text-bubble [talking]
-  [:div.text-bubble
-    {:class (when-not @talking "hidden")}
-    "Put that cookie down! Now! You big fat baby!"])
+  [:dev.bubble-ctn
+    [:div.bubble
+      {:class (when-not @talking "hidden")}
+      "Put that cookie down! Now! You big fat baby!"]
+    [:div.bubble-arrow]])
 
 (defn arnold-face [talking]
   (let [path (if @talking
