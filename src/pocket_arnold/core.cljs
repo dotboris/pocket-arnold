@@ -1,16 +1,13 @@
 (ns pocket-arnold.core
-  (:require))
+  (:require [reagent.core :as r]))
 
 (enable-console-print!)
 
-(println "This text is printed from src/pocket-arnold/core.cljs. Go ahead and edit it and see reloading in action.")
+(defn hello []
+  [:p "Hello Pocket Arnold"])
 
-;; define your app data so that it doesn't get over-written on reload
+(defn app-root []
+  [hello])
 
-(defonce app-state (atom {:text "Hello world!"}))
-
-
-(defn on-js-reload [])
-  ;; optionally touch your app-state to force rerendering depending on
-  ;; your application
-  ;; (swap! app-state update-in [:__figwheel_counter] inc)
+(let [el (.getElementById js/document "app")]
+  (r/render-component [app-root] el))
