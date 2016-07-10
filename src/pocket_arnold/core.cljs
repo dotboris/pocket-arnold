@@ -1,18 +1,24 @@
 (ns pocket-arnold.core
-  (:require [reagent.core :as r]))
+  (:require [reagent.core :as r]
+            [pocket-arnold.quotes :as q]))
 
 (enable-console-print!)
 
 (defonce talking (r/atom false))
+(defonce quote (r/atom nil))
 
-(defn text-bubble [talking]
+(defn toggle-arnold! [talking quote]
+  (swap! talking not)
+  (when @talking
+        (reset! quote (q/random-quote))))
+
+(defn text-bubble [talking quote]
   [:dev.bubble-ctn
     [:div.bubble
       {:class (when-not @talking "hidden")}
-      "Put that cookie down! Now! You big fat baby!"]
-    [:div.bubble-arrow]])
+      @quote]])
 
-(defn arnold-face [talking]
+(defn arnold-face [talking quote]
   (let [path (if @talking
                  "img/arnold-talking.png"
                  "img/arnold-normal.png")
@@ -23,12 +29,12 @@
       {:src path
        :alt alt
        :width 360 :heigth 500
-       :on-click #(swap! talking not)}]))
+       :on-click #(toggle-arnold! talking quote)}]))
 
-(defn app-root [talking]
+(defn app-root [talking quote]
   [:div.arnold
-    [text-bubble talking]
-    [arnold-face talking]])
+    [text-bubble talking quote]
+    [arnold-face talking quote]])
 
 (let [el (.getElementById js/document "app")]
-  (r/render-component [app-root talking] el))
+  (r/render-component [app-root talking quote] el))
