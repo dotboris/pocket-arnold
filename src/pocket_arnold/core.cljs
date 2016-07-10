@@ -13,7 +13,7 @@
         (reset! quote (q/random-quote))))
 
 (defn text-bubble [talking quote]
-  [:dev.bubble-ctn
+  [:div.bubble-ctn
     [:div.bubble
       {:class (when-not @talking "hidden")}
       @quote]])
@@ -28,7 +28,6 @@
     [:div.face-ctn>img.face
       {:src path
        :alt alt
-       :width 360 :heigth 500
        :on-click #(toggle-arnold! talking quote)}]))
 
 (defn app-root [talking quote]

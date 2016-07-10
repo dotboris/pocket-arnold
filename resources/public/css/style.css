@@ -1,6 +1,12 @@
+body {
+  margin: 0;
+}
+
 .face {
   display: block;
   margin: auto;
+  max-width: 360px;
+  width: 100%;
 }
 
 .bubble-ctn {
@@ -31,12 +37,12 @@
   display: block;
 }
 
-.hidden {
-  visibility: hidden;
-}
-
 .arnold {
   padding: 1rem;
   max-width: 400px;
   margin: auto;
+}
+
+.hidden {
+  visibility: hidden;
 }
