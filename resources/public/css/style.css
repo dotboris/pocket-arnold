@@ -2,10 +2,15 @@ body {
   margin: 0;
 }
 
+.face-ctn {
+  max-width: 360px;
+  padding: 20px;
+  margin: auto;
+}
+
 .face {
   display: block;
   margin: auto;
-  max-width: 360px;
   width: 100%;
 }
 
