@@ -38,3 +38,19 @@ To create a production build run:
 
 And open your browser in `resources/public/index.html`. You will not
 get live reloading, nor a REPL.
+
+Release
+-------
+
+1. Build the the release code
+
+    ```sh
+    $ bin/build-release
+    ```
+
+1. Install and configure the AWS cli
+1. Deploy to S3
+
+    ```sh
+    $ bin/deploy
+    ```
