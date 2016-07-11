@@ -27,7 +27,7 @@ body {
   border-radius: 0.75em;
   padding: 1em;
   background-color: white;
-  font-family: 'Comic Sans MS';
+  font-family: 'Permanent Marker', 'Comic Sans MS', cursive;
 }
 
 .bubble:after {
