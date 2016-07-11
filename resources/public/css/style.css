@@ -4,7 +4,7 @@ body {
 
 .face-ctn {
   max-width: 360px;
-  padding: 20px;
+  padding: 20px 20px 0 20px;
   margin: auto;
 }
 
@@ -46,6 +46,15 @@ body {
   padding: 1rem;
   max-width: 400px;
   margin: auto;
+  font-family: Helvetica, Tahoma, sans-serif;
+}
+
+.tip {
+  padding-left: 25px;
+  padding-right: 25px;
+  text-align: right;
+  color: #555;
+  margin-top: 5px;
 }
 
 .hidden {

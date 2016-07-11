@@ -33,7 +33,8 @@
 (defn app-root [talking quote]
   [:div.arnold
     [text-bubble talking quote]
-    [arnold-face talking quote]])
+    [arnold-face talking quote]
+    [:div.tip "TIP: Click on Arnold"]])
 
 (let [el (.getElementById js/document "app")]
   (r/render-component [app-root talking quote] el))
