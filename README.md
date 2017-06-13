@@ -44,15 +44,15 @@ get live reloading, nor a REPL.
 Release
 -------
 
-1. Build the the release code
+1.  Build the the release code
 
     ```sh
-    $ bin/build-release
+    bin/build-release
     ```
 
-1. Install and configure the AWS cli
-1. Deploy to S3
+1.  Install netlify cli
+1.  Deploy
 
     ```sh
-    $ bin/deploy
+    bin/deploy
     ```
