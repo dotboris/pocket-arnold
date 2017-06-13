@@ -1,6 +1,4 @@
 #!/bin/bash
 cd "$(dirname $0)/.." || exit 1
 
-aws s3 sync ./resources/public/ s3://pocket-arnold/ \
-  --acl public-read --delete
-aws s3 website s3://pocket-arnold --index-document index.html
+netlify deploy -p ./resources/public/
